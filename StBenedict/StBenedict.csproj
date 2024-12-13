@@ -1,0 +1,515 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{22D40C3A-C999-445E-AC31-5D7E27D979CF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>StBenedict</RootNamespace>
+    <AssemblyName>StBenedict</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.5.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI">
+      <HintPath>..\..\StBenedictHospital\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 4.0\Guna.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2">
+      <HintPath>..\..\StBenedictHospital\Guna_UI_Framework_Ultimate_v2.0.0.1\Guna.UI-Framework-Lib-master\Guna.UI2 WinForms\.net 4.0\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.4, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.4\lib\net461\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.5.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.5.0.0\lib\net461\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.5.0.0\lib\net461\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.5.0.0\lib\net461\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QRCoder, Version=1.6.0.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.6.0\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.5.0.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Appointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Appointment.Designer.cs">
+      <DependentUpon>Appointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Billing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Billing.Designer.cs">
+      <DependentUpon>Billing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dbConnect.cs" />
+    <Compile Include="DiseaseToolCost.cs" />
+    <Compile Include="DocAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocAppointment.Designer.cs">
+      <DependentUpon>DocAppointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocMedicalHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocMedicalHistory.Designer.cs">
+      <DependentUpon>DocMedicalHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocPatientManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocPatientManagement.Designer.cs">
+      <DependentUpon>DocPatientManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctor.Designer.cs">
+      <DependentUpon>Doctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DoctorDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoctorDashboard.Designer.cs">
+      <DependentUpon>DoctorDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MedicalHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MedicalHistory.Designer.cs">
+      <DependentUpon>MedicalHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Patient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Patient.Designer.cs">
+      <DependentUpon>Patient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prescription.cs" />
+    <Compile Include="PrescriptionCost.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Schedule.cs" />
+    <Compile Include="SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StBenedictDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StBenedictDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SurgicalCost.cs" />
+    <Compile Include="SurgicalProcedures.cs" />
+    <EmbeddedResource Include="Appointment.resx">
+      <DependentUpon>Appointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Billing.resx">
+      <DependentUpon>Billing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocAppointment.resx">
+      <DependentUpon>DocAppointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocMedicalHistory.resx">
+      <DependentUpon>DocMedicalHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocPatientManagement.resx">
+      <DependentUpon>DocPatientManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doctor.resx">
+      <DependentUpon>Doctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoctorDashboard.resx">
+      <DependentUpon>DoctorDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MedicalHistory.resx">
+      <DependentUpon>MedicalHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Patient.resx">
+      <DependentUpon>Patient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\assets\medical-checkup.webp" />
+    <None Include="Properties\assets\medical.webp" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="StBenedictDataSet.xsc">
+      <DependentUpon>StBenedictDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="StBenedictDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StBenedictDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StBenedictDataSet.xss">
+      <DependentUpon>StBenedictDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\360_F_108236272_7Wxofvp39teRiXWk0aQlopcXS1zZyMjw.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\360_F_108236272_7Wxofvp39teRiXWk0aQlopcXS1zZyMjw-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\402611-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\2330952.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\bed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\doctor %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\doctor %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\doctor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\doctor_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\image_2024-11-28_165732142-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\imageedit_2_3346526090.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\imageedit_2_3346526090-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\imageedit_2_4712053330.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\imageedit_2_4712053330-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\imageedit_2_7479936326.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\imageedit_2_7479936326.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\imageedit_2_8348501230.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\imresizer-1732782307702.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\imresizer-1732782883884.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\imresizer-1732783202207.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\imresizer-1732783209391.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\imresizer-1732783286933.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\imresizer-1732784077419.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\imresizer-1732784168260.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\imresizer-1732784168260-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\imresizer-1732784297108.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\imresizer-1732784413999.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\imresizer-1732784520831.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\medical.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\medical-checkup %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\medical-checkup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\medical-checkup_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\medical-team.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\nurse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\output-onlinetools %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\output-onlinetools %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\output-onlinetools %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\output-onlinetools %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\output-onlinetools.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\output-onlinetools-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\paralock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\parauser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\patient %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\patient %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\patient.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\people.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\png-transparent-advance-payment-computer-icons-money-cash-payment-icon-dollar-bill-illustration-miscellaneous-angle-text-thumbnail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\png-transparent-advance-payment-computer-icons-money-cash-payment-icon-dollar-bill-illustration-miscellaneous-angle-text-thumbnail-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\power-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\stand-by.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\unlock3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\user %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\assets\welcome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rohanbatako.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rohanbatikaw.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rohanbatikaw1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check %281%292.png" />
+    <None Include="Resources\check %281%291.png" />
+    <None Include="Resources\trash-bin1.png" />
+    <None Include="Resources\data-processing1.png" />
+    <None Include="Resources\trash-bin.png" />
+    <None Include="Resources\data-processing.png" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\search1.png" />
+    <None Include="Resources\check %281%29.png" />
+    <Content Include="StBenedict.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StBenedict_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>StBenedict.mdf</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
